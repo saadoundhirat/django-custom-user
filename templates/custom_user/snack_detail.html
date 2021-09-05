@@ -1,0 +1,16 @@
+{% extends '../_base.html' %}
+{% block nav %}
+<nav>
+  <a href="{% url 'snack_list' %}">snacks list</a>
+</nav>
+{% endblock nav %}
+{% block content %}
+  <div>
+    <h2>{{ snack.title }}</h2>
+    <p>purchaser: {{ snack.purchaser }}</p>
+    <p>description: {{ snack.description }}</p>
+    <a href="{% url 'snack_update' snack.pk %}" class="btn btn-success"> Update Snack</a>
+<a href="{% url 'snack_delete' snack.pk %}" class="btn btn-danger"> Delete Snack</a>
+  </div>
+
+{% endblock content %}
